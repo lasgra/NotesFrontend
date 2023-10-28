@@ -1,0 +1,20 @@
+<div class="MainPart" id="RemoveHere">
+    <div class="DarkMainPart">
+        <img src="../../assets/Pin.png" class="Pin">
+        <div class="RegisterNote">
+            <span class="UpperText">Create an account</span>
+            <div class="LoginInputBackground">
+                <input type="text" class="LoginInput" #Username placeholder="Username">
+            </div>
+            <span class="Disclamer">Accounts are assigned to IP addresses to prevent creating multiple notes by same person</span>
+            <div class="DoneButton" id="DoneButton" (click)="Clicked(Username)">Create !</div>
+        </div>
+    </div>
+</div>
+<div class="Invisible AccountExists" id="NotRemoveHere">
+    <h2>You've already created an account</h2>
+    <div class="ButtonWrap">
+        <div class="CheckButton" [routerLink]="'/Create'">Create a Note !</div>
+        <div class="CheckButton" [routerLink]="'/Notes'">Check others Note !</div>
+    </div>
+</div>

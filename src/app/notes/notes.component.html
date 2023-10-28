@@ -1,0 +1,43 @@
+<div class="MainPart">
+    <div class="SubmitButton">
+        <a href="/Random">Random Notes</a>
+    </div>
+    <div class="Selector">
+        <div class="UpperPart">
+            Recent Notes
+        </div>
+        <div class="LowerPart">
+            <div class="Notes" id="Notes">
+                <div class="Note" [ngStyle]="{'background-color' : RecentNote.bgColor}" *ngFor="let RecentNote of RecentNotes">
+                    <div class="Title">{{RecentNote.title}}</div>
+                    <div class="Autor">{{RecentNote.autor}}</div>
+                    <div class="Text">{{RecentNote.text}}</div>
+                    <div class="Rate">
+                        <img class="UpVote" #UpVote (click)="ChangeIcon($event.target)" src="../../assets/UpVote.png">
+                        <span class="RateText" #RateText>{{RecentNote.rate}}</span>
+                        <img class="DownVote" #DownVote (click)="ChangeIcon($event.target)" src="../../assets/DownVote.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Selector">
+        <div class="UpperPart">
+            Best Notes
+        </div>
+        <div class="LowerPart">
+            <div class="Notes" id="Notes2">
+                <div class="Note" [ngStyle]="{'background-color' : BestNote.bgColor}" *ngFor="let BestNote of BestNotes">
+                    <div class="Title">{{BestNote.title}}</div>
+                    <div class="Autor">{{BestNote.autor}}</div>
+                    <div class="Text">{{BestNote.text}}</div>
+                    <div class="Rate">
+                        <img class="UpVote" #UpVote (click)="ChangeIcon($event.target)" src="../../assets/UpVote.png">
+                        <span class="RateText" #RateText>{{BestNote.rate}}</span>
+                        <img class="DownVote" #DownVote (click)="ChangeIcon($event.target)" src="../../assets/DownVote.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

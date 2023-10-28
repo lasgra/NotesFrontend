@@ -1,0 +1,23 @@
+<div class="MainPart" >
+    <img src="../../assets/clouds.png" class="Clouds">
+    <div class="LeftSide">
+        <div class="Notes">
+            <div *ngFor="let Note of Notes" class="{{Note.class}}" [style]="{'background-color' : Note.bgColor}">
+                <div class="Title">{{Note.title}}</div>
+                <div class="Autor">{{Note.autor}}</div>
+                <div class="Text">{{Note.text}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="RightSide">
+        <div class="SiteTitle">
+            Leave a sticky note for world to see !
+        </div>
+        <div class="Start">
+            <span>Get started</span>
+            <div>
+                <img src="../../assets/arrow.png" width="80" height="80">
+            </div>
+        </div>
+    </div>
+</div>

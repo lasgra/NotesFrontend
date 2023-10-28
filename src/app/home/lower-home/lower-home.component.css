@@ -1,0 +1,72 @@
+.MainPart {
+    margin-top: 5%;
+    width: 100vw;
+    height: 80vh;
+}
+.Footer {
+    width: 100vw;
+    height: 3.5em;
+    margin-top: 6%;
+    background-color: burlywood;
+    text-align: center;
+    padding: 1em;
+}
+.Notes {
+    z-index: 3;
+    padding: 10%;
+    position: relative;
+    width: 100%;
+    height: 90%;
+    font-family: sans-serif;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: space-evenly;
+}
+.Note1 {
+    background-color: rgb(122,252,255);
+}
+.Note2 {
+    background-color: rgb(255,247,64);
+}
+.Note3 {
+    background-color: rgb(122,252,255);
+}
+.Notes > div {
+    height: 310px;
+    width: 300px;
+    padding: 1%;
+    border: 1px rgb(105, 103, 103) solid;
+}
+a {
+    text-decoration: none;
+}
+.Notes > div:hover {
+    animation: CardHover 1s 1 normal forwards;
+}
+@keyframes CardHover {
+    0% {scale: 1;}
+    100% {scale: 1.2;}
+}
+.Title {
+    text-shadow: 2px 2px 4px black;
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    color: white;
+    font-size: 100%;
+}
+.Autor {
+    width: 100%;
+    height: 6%;
+    color: rgb(141, 141, 141);
+    font-size: 90%;
+    padding-bottom: 20px;
+    border-bottom: 2px rgba(0, 0, 0, 0.301) solid;
+}
+.Text {
+    padding: 2%;
+    width: 100%;
+    height: 75%;
+    color: rgb(105, 103, 103);
+    font-size: 1em;
+}

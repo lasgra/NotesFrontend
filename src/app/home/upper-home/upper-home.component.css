@@ -1,0 +1,135 @@
+.MainPart {
+    display: flex;
+    width: 100vw;
+    height: 750px;
+    background-image: linear-gradient(to bottom, rgb(143, 195, 255),rgba(143, 195, 255, 0.829),rgba(143, 195, 255, 0));
+}
+.LeftSide {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 75%;
+}
+.RightSide {
+    width: 50%;
+    height: 75%;
+}
+.Notes {
+    z-index: 3;
+    padding: 20% 10% 10% 10%;
+    position: relative;
+    width: 75%;
+    height: 90%;
+    word-wrap: break-word;
+}
+.Notes > div {
+    position: absolute;
+    height: 290px;
+    width: 300px;
+    padding: 1%;
+    border: 1px rgb(105, 103, 103) solid;
+}
+.Note1 {
+    left: 0;
+    transform: rotate(-15deg);
+    margin-top: 21px;
+}
+.Note2 {
+    left: 18%;
+}
+.Note3 {
+    right: 0;
+    transform: rotate(15deg);
+    margin-top: 22px;
+}
+.Notes > div:hover {
+    animation: CardHover 1s 1 forwards;
+}
+@keyframes CardHover {
+    100% {transform: rotate(0deg); scale: 1.2; z-index: 3;}
+}
+.Title {
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    color: rgb(105, 103, 103);
+    font-size: 100%;
+}
+.Autor {
+    width: 100%;
+    height: 6%;
+    color: rgb(141, 141, 141);
+    font-size: 90%;
+    padding-bottom: 20px;
+    border-bottom: 2px rgba(0, 0, 0, 0.301) solid;
+}
+.Text {
+    padding: 2%;
+    width: 100%;
+    height: 82%;
+    color: rgb(105, 103, 103);
+    font-size: 1em;
+    font-family: monospace;
+}
+.SiteTitle {
+    background: rgb(255,247,64);
+    background: radial-gradient(circle, rgba(255,247,64,1) 0%, rgba(255,101,163,1) 100%);
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;
+    margin-top: 20%;
+    width: 100%;
+    height: 40%;
+    font-size: 500%;
+    text-align: center;
+    font-family: cursive;
+}
+.Start {
+    display: flex;
+    width: 100%;
+    height: 30%;
+
+}
+.Start > span {
+    width: 100%;
+    position: absolute;
+    bottom: calc(25% + 110px);
+    left: 71%;
+    font-size: 130%;
+    z-index: 2;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.Start > div {
+    width: 90px;
+    height: 90px;
+    padding: 4px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px black solid;
+    position: absolute;
+    bottom: 25%;
+    left: 72%;
+    z-index: 2;
+    animation: Jumping 3s infinite;
+}
+@keyframes Jumping {
+    0% { bottom: 25%;}
+    80% {bottom: 25%;}
+    90% { bottom: 26.5%;}
+    100% {bottom: 25%;}
+}
+.Clouds {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: calc(-4740px + 100vw);
+    width: 5440px;
+    height: 85vh;
+    animation: RollingClouds 45s linear infinite;
+}
+@keyframes RollingClouds {
+    0% { left: calc(-4740px + 100vw);}
+    100% { left: 0vw;}
+}
+

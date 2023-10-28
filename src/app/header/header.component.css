@@ -1,0 +1,42 @@
+.MainPart { 
+    width: 100vw;
+    height: 4em;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    padding: 0.5em;
+    background-color: rgb(255,247,64);
+    color: rgb(105, 103, 103);
+    user-select: none;
+}
+.Empty {
+    width: 100vw;
+    height: 4em;
+}
+.LeftPart, .RightPart {
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    color: rgb(105, 103, 103);
+}
+.LeftPart {
+    font-family: cursive;
+    text-align: left;
+    padding: 0.75em;
+    color: rgb(105, 103, 103);
+}
+.RightPart {
+    text-align: right;
+    padding: 0.55em;
+}
+.RightPart > div {
+    color: rgb(105, 103, 103);
+    background-color: rgb(255,101,163);
+    margin-right: 3em;
+    padding: 0.1em;
+    display: inline-block;
+    cursor: pointer;
+}

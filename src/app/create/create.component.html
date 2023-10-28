@@ -1,0 +1,31 @@
+<div class="MainPart"  id="RemoveHere" style="overflow: hidden;">
+    <div class="DarkMainPart">
+        <img src="../../assets/Pin.png" class="PinLeft">
+        <img src="../../assets/Pin.png" class="PinRight">
+        <div class="RegisterNote" #Note id="Note">
+            <input #Title type="text" class="Title" (keyup)="Send(SumbitButton, Message, Title)" maxlength="30" placeholder="Write Title here">
+            <span class="Autor" id="Autor">yyy ja</span>
+            <textarea type="text" maxlength="279" class="Message" (keyup)="Send(SumbitButton, Message, Title)" value="aaa" #Message placeholder="Write your message here"></textarea>
+        </div>
+        <div class="NoteSettings">
+            <span class="SettingText">Note color</span>
+            <div class="SettingDiv">
+                <div style="background-color: rgb(255,247,64);" class="Yellow" id="Yellow" #Yellow (click)="ChangeColor(Yellow, Note)"></div>
+                <div style="background-color: rgb(255,101,163);" class="Pink" #Pink (click)="ChangeColor(Pink, Note)"></div>
+                <div style="background-color: rgb(122,252,255);" class="Blue" #Blue (click)="ChangeColor(Blue, Note)"></div>
+                <div style="background-color: rgb(116,237,75);" class="Green" #Green (click)="ChangeColor(Green, Note)"></div>
+                <div style="background-color: rgb(255,169,48);" class="Orange" #Orange (click)="ChangeColor(Orange, Note)"></div>
+            </div>
+        </div>
+        <div #SumbitButton (click)="SendMessage(Message, Title)" class="SubmitButton">
+            Create !
+        </div>
+    </div>
+</div>
+<div class="Invisible AccountExists" id="NotRemoveHere">
+    <h2 id="Text">You've already created a note</h2>
+    <div class="ButtonWrap">
+        <div class="CheckButton" id="CheckButton" [routerLink]="'/Notes'">Check others Note !</div>
+        <div class="CheckButton Invisible" id="CheckButtonInv" [routerLink]="'/Account'">Create account !</div>
+    </div>
+</div>
