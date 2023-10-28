@@ -47,7 +47,7 @@ export class CreateComponent {
       LastColor.style.border = ""
     }
     LastColor = Color
-    Color.style.border = "2px black solid"    
+    Color.style.border = "2px black solid"
     Note.style.backgroundColor = Color.style.backgroundColor
   }
   ChangeMarkerColor(Color : HTMLDivElement, Note : HTMLTextAreaElement) {
@@ -56,7 +56,7 @@ export class CreateComponent {
       LastMarkerColor.style.border = ""
     }
     LastMarkerColor = Color
-    Color.style.border = "2px black solid"    
+    Color.style.border = "2px black solid"
     Note.style.color = Color.style.backgroundColor
   }
   ChangeFontSize (Slider : HTMLInputElement, Text : HTMLTextAreaElement) {
@@ -71,7 +71,7 @@ export class CreateComponent {
     else {
       if (ButtonAnim == true) {
         console.log("aaaa");
-        
+
         ButtonAnim = false
         Button.classList.remove("ButtonAnim")
         Button.classList.add("RevButtonAnim")
@@ -80,13 +80,13 @@ export class CreateComponent {
   }
   SendMessage(Message : HTMLTextAreaElement, Title : HTMLInputElement) {
     CreatedNoteDTO = {
-      Class: "",
-      Title: Title.value,
-      Autor: this.cookieService.get("Username"),
-      Text:  Message.value,
-      Rate:  "0",
-      BgColor: LastColor.style.backgroundColor,
-      Date: (new Date().getTime()).toString(),
+      class: "",
+      title: Title.value,
+      author: this.cookieService.get("Username"),
+      text:  Message.value,
+      rate:  "0",
+      bgColor: LastColor.style.backgroundColor,
+      date: (new Date().getTime()).toString(),
     }
     this.PostMessage(CreatedNoteDTO).subscribe()
   }

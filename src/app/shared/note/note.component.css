@@ -1,0 +1,62 @@
+.Title {
+  text-align: center;
+  width: 100%;
+  height: 10%;
+  color: rgb(105, 103, 103);
+  font-size: 100%;
+}
+.Autor {
+  width: 100%;
+  height: 6%;
+  color: rgb(141, 141, 141);
+  font-size: 90%;
+  padding-bottom: 20px;
+  border-bottom: 2px rgba(0, 0, 0, 0.301) solid;
+}
+.Text {
+  width: 100%;
+  height: 82%;
+  color: rgb(105, 103, 103);
+  font-size: 1em;
+  font-family: monospace;
+}
+.Rate {
+  top: 50%;
+  right: -55px;
+  transform: translate(0, -50%);
+  position: absolute;
+  height: 200px;
+  width: 50px;
+}
+.UpVote {
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.RateText {
+  text-align: center;
+  font-family: cursive;
+  font-size: 170%;
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 51%;
+  left: -50%;
+  transform: translate(50%, -50%);
+}
+.DownVote {
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.Note {
+  vertical-align: top;
+}
+a {
+  text-decoration: none;
+  color:rgb(105, 103, 103);
+}
