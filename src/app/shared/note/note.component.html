@@ -1,10 +1,9 @@
 <div class="Note p-2 h-100" [ngStyle]="{'background-color' : note.bgColor}">
   <div class="Title">{{note.title}}</div>
-  <div class="Autor">{{note.author}}</div>
+  <div class="Autor" #Author>{{note.author}}</div>
   <div class="Text">{{note.text}}</div>
   <div class="Rate">
-    <img class="UpVote" #UpVote (click)="ChangeIcon($event.target)" src="../../assets/UpVote.png">
+    <img class="UpVote" (click)="ChangeIcon($event.target)" src="{{note.liked}}">
     <span class="RateText" #RateText>{{note.rate}}</span>
-    <img class="DownVote" #DownVote (click)="ChangeIcon($event.target)" src="../../assets/DownVote.png">
   </div>
 </div>
