@@ -13,7 +13,7 @@
     width: 90%;
     height: 10%;
     -webkit-filter: drop-shadow(21px 21px 25px #222);
-    filter: drop-shadow(21px 21px 25px #222); 
+    filter: drop-shadow(21px 21px 25px #222);
     user-select: none;
     background-color: rgb(116,237,75);
     width: 422px;
@@ -54,13 +54,13 @@
     background-color: wheat;
     padding: 0.25%;
 }
-.Notes > div {
+.Notes > * {
     height: 290px;
     width: 300px;
-    padding: 12px;
     margin-right: 72.6px;
     display: inline-block;
     position: relative;
+  vertical-align: top;
     border: 1px rgb(105, 103, 103) solid;
 }
 .Title {

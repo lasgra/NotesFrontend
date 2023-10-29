@@ -14,6 +14,7 @@ import { Routes } from '@angular/router';
 import { NotesComponent } from './notes/notes.component';
 import { CreateComponent } from './create/create.component';
 import { RandomComponent } from './random/random.component';
+import { NoteComponent } from './shared/note/note.component';
 
 const routes: Routes = [
   {path: "", component: HomeComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
     NotesComponent,
     CreateComponent,
     RandomComponent,
+    NoteComponent,
   ],
   imports: [
     BrowserModule,

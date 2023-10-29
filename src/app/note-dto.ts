@@ -1,9 +1,9 @@
 export interface NoteDTO {
-    Class : string
-    Title : string
-    Autor : string
-    Text : string
-    Rate : string
-    BgColor : string
-    Date : string
+    class : string
+    title : string
+    author : string
+    text : string
+    rate : string
+    bgColor : string
+    date : string
 }
