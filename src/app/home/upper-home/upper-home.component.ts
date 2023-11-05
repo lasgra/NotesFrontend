@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { NoteDTO } from 'src/app/note-dto';
 
-const URL = "https://localhost:7051/"
+const URL = "http://localhost:7142/"
 @Component({
   selector: 'app-upper-home',
   templateUrl: './upper-home.component.html',
@@ -22,9 +22,10 @@ export class UpperHomeComponent {
     console.log(this.Notes);
     this.GetNote().subscribe()
   }
-  
   GetNote() : Observable<NoteDTO[]>{
-    return this.http.get<NoteDTO[]>("https://localhost:7051/FrontRandomNote")
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    return this.http.get<NoteDTO[]>("http://localhost:7142/FrontRandomNote", requestOptions)
     .pipe(tap(response => {
       this.Notes = response
       console.log(this.Notes);

@@ -3,7 +3,7 @@
   <div class="Autor" #Author>{{note.author}}</div>
   <div class="Text">{{note.text}}</div>
   <div class="Rate">
-    <img class="UpVote" (click)="ChangeIcon($event.target)" src="{{note.liked}}">
+    <img class="UpVote" (click)="ChangeIcon($event.target)" src="{{!note.liked ? '../../assets/UpVote.png' : '../../assets/F_UpVote.png'}}"/>
     <span class="RateText" #RateText>{{note.rate}}</span>
   </div>
 </div>

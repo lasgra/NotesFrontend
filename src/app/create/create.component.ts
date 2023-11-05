@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NoteDTO } from '../note-dto';
 import { tap } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
@@ -33,7 +33,9 @@ export class CreateComponent {
     this.CheckUser().subscribe()
   }
   CheckUser() {
-    return this.http.post("https://localhost:7051/GetNote?Autor=" + this.cookieService.get("Username"), this.cookieService.get("Username"))
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    return this.http.post("http://localhost:7142/GetNote?Author=" + this.cookieService.get("Username"), this.cookieService.get("Username"), requestOptions)
     .pipe(tap(response => {
       if (response == "Exists") {
         document.getElementById("RemoveHere")?.classList.add("Invisible")
@@ -70,8 +72,6 @@ export class CreateComponent {
     }
     else {
       if (ButtonAnim == true) {
-        console.log("aaaa");
-
         ButtonAnim = false
         Button.classList.remove("ButtonAnim")
         Button.classList.add("RevButtonAnim")
@@ -83,16 +83,19 @@ export class CreateComponent {
       class: "",
       title: Title.value,
       author: this.cookieService.get("Username"),
-      text:  Message.value,
-      rate:  "0",
+      text: Message.value,
+      rate: "0",
       bgColor: LastColor.style.backgroundColor,
-      date: (new Date().getTime()).toString(),
     }
     this.PostMessage(CreatedNoteDTO).subscribe()
   }
   PostMessage(NoteDTO : NoteDTO) {
-    return this.http.post("https://localhost:7051/AddNote", NoteDTO)
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    return this.http.post("http://localhost:7142/AddNote", NoteDTO, requestOptions)
     .pipe(tap(response => {
+      console.log(response);
+      
       this.router.navigate(['/Notes'])
     }))
   }

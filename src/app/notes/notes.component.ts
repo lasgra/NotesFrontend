@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit} from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GetnotesDTO } from '../getnotes-dto';
-import { Observable, interval, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-notes',
@@ -16,29 +16,29 @@ export class NotesComponent implements OnInit {
   BestNotes: GetnotesDTO[] = []
   RecentNotes: GetnotesDTO[] = []
   ngOnInit() {
-    console.log(this.cookieService.get("Username"));
-    
     this.GetBestNotes().subscribe()
     this.GetRecentNotes().subscribe()
   }
   GetBestNotes() : Observable<GetnotesDTO[]>{
-    let URL : string = "https://localhost:7051/GetBestNotes"
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    let URL : string = "http://localhost:7142/GetBestNotes"
     if(this.cookieService.check("Username")) {
-      URL = "https://localhost:7051/GetBestNotes?Username="+this.cookieService.get("Username")
+      URL = "http://localhost:7142/GetBestNotes?Username="+this.cookieService.get("Username")
     }
-    return this.http.get<GetnotesDTO[]>(URL)
+    return this.http.get<GetnotesDTO[]>(URL, requestOptions)
     .pipe(tap(response => {
       this.BestNotes = response
-      console.log(response);
-      
     }))
   }
   GetRecentNotes() : Observable<GetnotesDTO[]>{
-    let URL : string = "https://localhost:7051/GetRecentNotes"
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    let URL : string = "http://localhost:7142/GetRecentNotes"
     if(this.cookieService.check("Username")) {
-      URL = "https://localhost:7051/GetRecentNotes?Username="+this.cookieService.get("Username")
+      URL = "http://localhost:7142/GetRecentNotes?Username="+this.cookieService.get("Username")
     }
-    return this.http.get<GetnotesDTO[]>(URL)
+    return this.http.get<GetnotesDTO[]>(URL, requestOptions)
     .pipe(tap(response => {
       this.RecentNotes = response
     }))

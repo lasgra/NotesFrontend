@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NoteDTO } from '../note-dto';
 import { Observable, tap } from 'rxjs';
 import { Ipaddress } from '../ipaddress';
@@ -42,7 +42,9 @@ export class AccountComponent {
     }))
   }
   CheckForAccount(UserDTO : any) {
-    return this.http.post<NoteDTO[]>("https://localhost:7051/FindUser", UserDTO)
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    return this.http.post<NoteDTO[]>("http://localhost:7142/FindUser", UserDTO, requestOptions)
       .pipe(tap(response => {     
         if (response.toString() == "Exists" && UserDTO.Username == ""){
           this.AccountExist()
@@ -56,7 +58,9 @@ export class AccountComponent {
     }))
   }
   AddAccount(UserDTO : any) : Observable<NoteDTO[]>{
-    return this.http.post<NoteDTO[]>("https://localhost:7051/AddUser", UserDTO)
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    return this.http.post<NoteDTO[]>("http://localhost:7142/AddUser", UserDTO, requestOptions)
     .pipe(tap(response => {  
       if (response.toString() == "Added"){
         this.cookieService.set('Username', UserDTO.Username);

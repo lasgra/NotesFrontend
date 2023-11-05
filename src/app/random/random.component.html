@@ -1,15 +1,6 @@
 <div class="MainPart">
     <div class="Notes" id="Notes">
-        <div class="Note" [ngStyle]="{'background-color' : Note.bgColor}" *ngFor="let Note of Note">
-            <div class="Title">{{Note.title}}</div>
-            <div class="Autor">{{Note.autor}}</div>
-            <div class="Text">{{Note.text}}</div>
-            <div class="Rate">
-                <img class="UpVote" #UpVote (click)="ChangeIcon($event.target)" src="../../assets/UpVote.png">
-                <span class="RateText" #RateText>{{Note.rate}}</span>
-                <img class="DownVote" #DownVote (click)="ChangeIcon($event.target)" src="../../assets/DownVote.png">
-            </div>
-        </div>
+        <app-note *ngFor="let note of Notes" [note]="note"/>
     </div>
     <div class="SubmitButton">
         <a href="/Random">Find Another Note</a>

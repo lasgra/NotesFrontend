@@ -1,7 +1,7 @@
 import {Component, inject, Input, ViewChild, ElementRef} from '@angular/core';
 import {tap} from "rxjs";
 import {CookieService} from "ngx-cookie-service";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { GetnotesDTO } from 'src/app/getnotes-dto';
 
 @Component({
@@ -24,7 +24,10 @@ export class NoteComponent {
       this.SendVote(this.AuthorText.nativeElement.innerText, this.cookieService.get("Username"), Icon).subscribe()
   }
   SendVote(Author : string, Username : string, Icon : HTMLImageElement) {
-    return this.http.post("https://localhost:7051/Vote?Author=" + Author + "&Username=" + Username, "a")
+    console.log("aaaa");
+    const headers = new HttpHeaders({'ngrok-skip-browser-warning': 'true'});
+    const requestOptions = { headers: headers };
+    return this.http.post("http://localhost:7142/Vote?Author=" + Author + "&Username=" + Username, requestOptions)
       .pipe(tap(response => {
         console.log(response);
         let rate = parseInt(this.rateText.nativeElement.innerText)

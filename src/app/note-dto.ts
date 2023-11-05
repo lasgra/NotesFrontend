@@ -5,5 +5,4 @@ export interface NoteDTO {
     text : string
     rate : string
     bgColor : string
-    date : string
 }

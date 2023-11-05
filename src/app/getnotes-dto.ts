@@ -6,5 +6,5 @@ export interface GetnotesDTO {
     rate : string
     bgColor : string
     date : string
-    liked : string
+    liked : boolean
 }

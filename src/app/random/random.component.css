@@ -11,17 +11,12 @@
     color: rgb(105, 103, 103);
 }
 .Notes {
-    height: 580px;
-    width: 600px;
-}
-.Notes > div {
-    height: 100%;
-    width: 100%;
-    padding: 14.5px;
-    margin-right: 72.6px;
-    display: inline-block;
-    position: relative;
-    border: 1px rgb(105, 103, 103) solid;
+    height: 290px;
+    width: 300px;
+    scale: 2;
+    position: absolute;
+    top: 36%;
+    left: 40%;
 }
 .Title {
     text-align: center;
@@ -48,7 +43,7 @@
 }
 .Rate {
     top: 50%;
-    right: -55px;
+    right: 28vw;
     transform: translate(0, -50%);
     position: absolute;
     height: 200px;
@@ -96,6 +91,9 @@
     font-size: 270%;
     cursor: pointer;
     text-align: center;
+    position: absolute;
+    bottom: 5%;
+    left: 31%;
 }
 a {
     text-decoration: none;
